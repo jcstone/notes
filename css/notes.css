@@ -1,0 +1,30 @@
+#container{
+	width: 960px;
+	margin: 0 auto;
+}
+#notes{
+
+}
+	.single-note{
+		background-color: yellow;
+		border: thin solid black;
+		margin: 10px 0 10px 20px; 
+		display: inline-block;
+		width: 200px;
+		height: 200px;
+		padding: 2px;
+		vertical-align: top;
+	}
+		.note-title{
+			border-bottom: thin solid black;
+			font-weight: bold;
+			
+		}
+		.note-text{
+			display: inline-block;
+			
+
+		}
+		.delete{
+			float: right;
+		}
