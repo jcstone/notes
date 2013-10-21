@@ -1,13 +1,13 @@
 <!doctype html>
 <?php
 	session_start();
-	// require('connection.php')
 ?>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<title>Notes App</title>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/notes.css">
 	<script type="text/javascript">
 		$(document).ready(function(){
@@ -61,20 +61,51 @@
 </head>
 <body>
 	<div id="container">
-		<div id="notes">
-			<h1>My Notes</h1>
-				<div id="results"></div>
+	<div class="row">
+		<div class="page-header">
+			<h1>Note Application<small> Built with PHP, Javascript, and MySQL</small></h1>
 		</div>
+	</div>
+	<div class="row">
+			<div class="col-md-4">
+				<div id="post-note">
+					<h4>Add a note:</h4>
 
-		<div id="post-note">
-			<h4>Add a note:</h4>
-			<form id="add-note" action="process.php" method="post">
-				<input type="hidden" name="note-id" value="0">
-				<p>Title:<input type="text" id="title" name="note-title"></p>
-				<textarea rows="6" cols="20" class="note" name="note-text"></textarea>
-				<input type="submit" />
-			</form>
+					<form class="form-horizontal" role="form" id="add-note" action="process.php" method="post">
+						
+						<div class="form-group">
+						    <label for="title" class="col-lg-2 control-label">Title</label>
+						    <div class="col-lg-10">
+						     	<input type="text" id="title" class="form-control" name="note-title" placeholder = "Title">
+						    </div>
+					  	</div>
+					  	<div class="form-group">
+						    <label for="note-box" class="col-lg-2 control-label">Note</label>
+						    <div class="col-lg-10">
+						     	<textarea rows="6" class="note form-control" id = "note-box" name="note-text"></textarea>
+						    </div>
+					  	</div>
+					  	<div class="form-group">
+						    <label for="send-note" class="col-lg-2 control-label"></label>
+						    <div class="col-lg-10">
+						     	<input class="btn btn-default" id="send-note" type="submit" />
+						    </div>
+					  	</div>
+						<input type="hidden" name="note-id" value="0">
+						
+					</form>
+				</div>
+				<div class="alert alert-info">Tip: Double click note text to edit existing note.</div>
+			</div>
+	
+			<div class="col-md-8">
+				<div id="notes">
+					<h4>My Notes</h4>
+						<div id="results"></div>
+				</div>
+			</div>
 		</div>
+		
 	</div>
 </body>
 </html>

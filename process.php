@@ -8,6 +8,7 @@ class Notes
 {
 
     protected $pdo;
+
     function __construct()
     {
         //Connect to the databse using PDO
@@ -58,7 +59,6 @@ class Notes
     function return_notes()
     {
         $data = array();
-        // $query = "SELECT * FROM note";
         $query = $this->pdo->prepare('SELECT * FROM note');
         $query->execute();
         $posts = $query->fetchAll();
